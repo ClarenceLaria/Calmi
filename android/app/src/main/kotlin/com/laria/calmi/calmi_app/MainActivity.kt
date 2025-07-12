@@ -1,0 +1,5 @@
+package com.laria.calmi.calmi_app
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity : FlutterActivity()
