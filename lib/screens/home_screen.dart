@@ -1,3 +1,4 @@
+import 'package:calmi_app/components/timeline.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget{
@@ -164,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBox(height: 25),
-              
+              TimelineWidget(),
             ],
           )
         ),
