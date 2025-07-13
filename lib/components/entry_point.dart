@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:calmi_app/screens/home_screen.dart';
 
 class EntryPoint extends StatefulWidget{
   const EntryPoint({super.key});
@@ -9,7 +10,7 @@ class EntryPoint extends StatefulWidget{
 
 class _EntryPointState extends State<EntryPoint> {
   final screens = [
-    {'title': 'Home','icon': Icons.home,'route': Center(child: Text('Home Screen'),),},
+    {'title': 'Home','icon': Icons.home,'route': HomeScreen()},
     {'title': 'AI Chat','icon': Icons.chat,'route': Center(child: Text('AI Chat Screen'),),},
     {'title': 'Live Coach','icon': Icons.person,'route': Center(child: Text('Live Coach Screen'),),},
   ];

@@ -1,4 +1,5 @@
 import 'package:calmi_app/components/entry_point.dart';
+import 'package:calmi_app/core/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,9 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.lightTheme,
       home: const EntryPoint(),
     );
   }

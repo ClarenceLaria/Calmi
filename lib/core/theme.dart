@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
-    primarySwatch: Colors.blue,
-    primaryColor: Color.fromARGB(255,137,197,204),
+    primarySwatch: Colors.green,
+    primaryColor: Color.fromARGB(255,152,175,98),
     scaffoldBackgroundColor: Colors.white,
     textTheme: TextTheme(
       bodyLarge: TextStyle(
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: FontWeight.bold,
         color: Colors.black87,
       ),
@@ -23,9 +23,12 @@ class AppTheme {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Color.fromARGB(255,137,197,204),
+        backgroundColor: Color.fromARGB(255,152,175,98),
         foregroundColor: Colors.white,
-        textStyle: TextStyle(fontSize: 16),
+        textStyle: TextStyle(fontSize: 12),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
       ),
     ),
   );
