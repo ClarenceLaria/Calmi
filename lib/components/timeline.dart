@@ -10,7 +10,7 @@ class TimelineWidget extends StatefulWidget {
 
 class _TimelineWidgetState extends State<TimelineWidget> {
   final List<Map<String, dynamic>> timelineItems = [
-    {'title': 'Meditation', 'description': 'Intro to Meditation', 'length': '8 mins', 'image': 'assets/icons/meditation.png'},
+    {'title': 'Meditation', 'description': 'Intro to Meditation', 'length': '8 mins', 'image': 'assets/icons/mindfulness.png'},
     {'title': 'Mindfulness', 'description': 'Mindfulness Practices', 'length': '10 mins', 'image': 'assets/icons/mindfulness.png'},
     {'title': 'Journaling', 'description': 'Journaling Techniques', 'length': '5 mins', 'image': 'assets/icons/journaling.png'},
     {'title': 'Breathing', 'description': 'Breathing Techniques', 'length': '5 mins', 'image': 'assets/icons/mindfulness.png'},
@@ -20,7 +20,9 @@ class _TimelineWidgetState extends State<TimelineWidget> {
   @override
   Widget build(BuildContext context) {
     return Timeline.tileBuilder(
+      shrinkWrap: true,
       theme: TimelineThemeData(
+        nodePosition: 0,
         color: Theme.of(context).primaryColor,
         indicatorTheme: IndicatorThemeData(
           size: 20,
