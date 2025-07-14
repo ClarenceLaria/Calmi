@@ -25,7 +25,6 @@ class _HomeScreenState extends State<HomeScreen> {
           onPressed: () {},
           icon: const Icon(Icons.menu),
         ),
-        backgroundColor: Color.fromARGB(255,245,245,245),
         centerTitle: true,
         title: Text(
           'Home',
@@ -42,13 +41,16 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
+      backgroundColor: Color.fromARGB(255,245,245,245),
+      extendBody: true,
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 150,
+                height: 120,
                 width: double.infinity,
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
@@ -63,20 +65,21 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: TextStyle(
                           fontSize: Theme.of(context).textTheme.bodySmall?.fontSize ?? 14,
                           fontWeight: FontWeight.w600,
+                          color: Colors.white,
                         ),
                       ),
                     ),
                     Image.asset(
                       'assets/icons/thank_you.png',
-                      height: 50,
-                      width: 50,
+                      height: 150,
+                      width: 150,
                     ),
                   ],
                 ),
               ),
               const SizedBox(height: 20),
               Container(
-                height: 150,
+                height: 100,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -88,6 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Text(
                       'How do you feel today?',
                       style: TextStyle(
+                        fontWeight: FontWeight.w600,
                         fontSize: Theme.of(context).textTheme.bodySmall?.fontSize ?? 14,
                       ),
                     ),
@@ -114,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Expanded(
                     child: Container(
-                      height: 100,
+                      height: 65,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
@@ -144,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(width: 12),
                   Expanded(
                     child: Container(
-                      height: 100,
+                      height: 65,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),

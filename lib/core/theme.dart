@@ -10,15 +10,15 @@ class AppTheme {
       bodyLarge: TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.bold,
-        color: Colors.black87,
+        color: Colors.black,
       ),
       bodyMedium: TextStyle(
         fontSize: 16,
-        color: Colors.black54,
+        color: Colors.black,
       ),
       bodySmall: TextStyle(
         fontSize: 14,
-        color: Colors.black45,
+        color: Colors.black,
       ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(

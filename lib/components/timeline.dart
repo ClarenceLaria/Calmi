@@ -45,7 +45,8 @@ class _TimelineWidgetState extends State<TimelineWidget> {
 
   Widget _activityCard(Map<String, dynamic> item){
     return Container(
-      height: 150,
+      margin: const EdgeInsets.symmetric(vertical: 8.0),
+      height: 100,
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -55,6 +56,7 @@ class _TimelineWidgetState extends State<TimelineWidget> {
       child: Row(
         children: [
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 item['title'] as String,
@@ -85,8 +87,8 @@ class _TimelineWidgetState extends State<TimelineWidget> {
           Spacer(),
           Image.asset(
             item['image'] as String,
-            height: 50,
-            width: 50,
+            height: 80,
+            width: 80,
           ),
         ],
       ),
