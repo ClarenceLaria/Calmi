@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:calmi_app/screens/home_screen.dart';
+import 'package:calmi_app/components/custom_navbar.dart';
 
 class EntryPoint extends StatefulWidget{
   const EntryPoint({super.key});
@@ -57,6 +58,7 @@ class _EntryPointState extends State<EntryPoint> {
         ),
       ),
       body: screens[_selectedIndex]['route'] as Widget,
+      bottomNavigationBar: CustomBottomNavBar(selectedIndex: _selectedIndex, onItemTapped: _onItemTapped,),
     );
   }
 }
