@@ -1,4 +1,5 @@
 import 'package:calmi_app/components/moods_gauge.dart';
+import 'package:calmi_app/models/mood_model.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,25 +10,23 @@ void main() {
 }
 
 class MoodScreen extends StatefulWidget {
+  const MoodScreen({super.key});
+  
   @override
-  _MoodScreenState createState() => _MoodScreenState();
+  State<MoodScreen> createState() => _MoodScreenState();
 }
 
 class _MoodScreenState extends State<MoodScreen> {
-  int selectedMood = 1;
-
-  final List<Map<String, dynamic>> moods = [
-    {"emoji": "😡", "label": "Angry", "color": Colors.red},
-    {"emoji": "😟", "label": "Not Good", "color": Colors.orange},
-    {"emoji": "😐", "label": "Okay", "color": Colors.amber},
-    {"emoji": "🙂", "label": "Good", "color": Colors.lightGreen},
-    {"emoji": "😄", "label": "Great", "color": Colors.green},
-  ];
+  MoodModel? selectedMood;
+  void _onMoodSelected(MoodModel mood) {
+    setState(() {
+      selectedMood = mood;
+    });
+    print('Selected mood: ${mood.label}');
+  }
 
   @override
   Widget build(BuildContext context) {
-    final mood = moods[selectedMood];
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -45,33 +44,44 @@ class _MoodScreenState extends State<MoodScreen> {
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 30),
+              if (selectedMood != null) ...[
               Text(
-                mood['emoji'],
-                style: TextStyle(fontSize: 100, color: mood['color']),
-              ),
-              SizedBox(height: 10),
-              Text(
-                mood['label'],
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-              ),
+                  selectedMood!.emoji,
+                  style: TextStyle(fontSize: 100, color: selectedMood!.color),
+                ),
+                SizedBox(height: 10),
+                Text(
+                  selectedMood!.label,
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                ),
+                SizedBox(height: 20),
+              ] else ...[
+                Text(
+                  "Choose a mood below",
+                  style: TextStyle(fontSize: 18, color: Colors.grey),
+                ),
+                SizedBox(height: 30),
+              ],
               SizedBox(height: 20),
-              MoodsGauge(mood: mood,),
+              MoodsGauge(onMoodSelected: _onMoodSelected,),
               Spacer(),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Save mood or navigate
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 16),
-                  ),
-                  child: Text(
-                    "I Feel ${mood['label']}!",
-                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              if (selectedMood != null)
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // Save mood or navigate
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 16),
+                    ),
+                    child: Text(
+
+                      "I Feel ${selectedMood!.label}!",
+                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
-              ),
             ],
           ),
         ),
