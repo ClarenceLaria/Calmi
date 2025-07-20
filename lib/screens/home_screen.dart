@@ -1,4 +1,5 @@
 import 'package:calmi_app/components/timeline.dart';
+import 'package:calmi_app/screens/moods_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -101,11 +102,21 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: moodImages
                           .map((img) => Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                                child: Image.asset(
-                                  img['image'] as String,
-                                  height: 40,
-                                  width: 40,
-                                  color: img['color'] as Color,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => MoodScreen(),
+                                      ),
+                                    );
+                                  },
+                                  child: Image.asset(
+                                    img['image'] as String,
+                                    height: 40,
+                                    width: 40,
+                                    color: img['color'] as Color,
+                                  ),
                                 ),
                               ))
                           .toList(),
