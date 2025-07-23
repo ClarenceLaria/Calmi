@@ -85,7 +85,7 @@ class _MoodsGaugeState extends State<MoodsGauge> {
                     startValue: start,
                     endValue: end,
                     color: moods[index].color,
-                    label: moods[index].label,
+                    label: moods[index].emoji,
                   );
                 },
               ),
