@@ -1,3 +1,4 @@
+import 'package:calmi_app/components/moods_grid.dart';
 import 'package:flutter/material.dart';
 
 class MoodsReasonScreen extends StatelessWidget {
@@ -16,7 +17,18 @@ class MoodsReasonScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 20),
-              
+              MoodsReasonGrid(),
+              Spacer(),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+                  textStyle: TextStyle(fontSize: 18),
+                ),
+                child: const Text('Continue'),
+              ),
             ],
           ),
         ),
