@@ -47,9 +47,7 @@ class _MoodsGaugeState extends State<MoodsGauge> {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      color: Colors.green,
       width: double.infinity,
-      // padding: const EdgeInsets.symmetric(vertical: 10),
       child: SfRadialGauge(
         axes: <RadialAxis>[
           RadialAxis(

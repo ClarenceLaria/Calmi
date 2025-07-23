@@ -23,7 +23,7 @@ class _MoodsReasonGridState extends State<MoodsReasonGrid> {
   }
 
   List<MoodsReasonModel> get selectedReasons => selectedReasonsIndexes.map((index) => moodsReasonsList[index]).toList();
-  
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -44,11 +44,11 @@ class _MoodsReasonGridState extends State<MoodsReasonGrid> {
             borderRadius: BorderRadius.circular(12.0),
             color: Colors.white,
           ),
-          height: 100,
-          width: 100,
+          height: 250,
+          width: 250,
           padding: const EdgeInsets.all(8.0),
           child: Column(children: [
-            Image.asset(item.image, height: 50, width: 50),
+            Image.asset(item.image, height: 40, width: 40),
             const Spacer(),
             Text(
               item.reason,

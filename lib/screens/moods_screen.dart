@@ -71,7 +71,8 @@ class _MoodScreenState extends State<MoodScreen> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context,
+                      Navigator.push(
+                        context,
                         MaterialPageRoute(
                           builder: (context) => MoodsReasonScreen(),
                         ),
