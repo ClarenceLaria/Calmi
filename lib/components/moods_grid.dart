@@ -1,9 +1,29 @@
+import 'package:calmi_app/models/moods_reason_model.dart';
 import 'package:calmi_app/repositories/moods_reason_repo.dart';
 import 'package:flutter/material.dart';
 
-class MoodsReasonGrid extends StatelessWidget {
+class MoodsReasonGrid extends StatefulWidget {
   const MoodsReasonGrid({super.key});
 
+  @override
+  State<MoodsReasonGrid> createState() => _MoodsReasonGridState();
+}
+
+class _MoodsReasonGridState extends State<MoodsReasonGrid> {
+  final Set<int> selectedReasonsIndexes = {};
+
+  void toggleReason(int index){
+    setState(() {
+      if(selectedReasonsIndexes.contains(index)){
+        selectedReasonsIndexes.remove(index);
+      } else {
+        selectedReasonsIndexes.add(index);
+      }
+    });
+  }
+
+  List<MoodsReasonModel> get selectedReasons => selectedReasonsIndexes.map((index) => moodsReasonsList[index]).toList();
+  
   @override
   Widget build(BuildContext context) {
     return GridView.builder(

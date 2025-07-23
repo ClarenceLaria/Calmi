@@ -1,5 +1,6 @@
 import 'package:calmi_app/components/moods_gauge.dart';
 import 'package:calmi_app/models/mood_model.dart';
+import 'package:calmi_app/screens/moods_reason_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -70,7 +71,11 @@ class _MoodScreenState extends State<MoodScreen> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Save mood or navigate
+                      Navigator.push(context,
+                        MaterialPageRoute(
+                          builder: (context) => MoodsReasonScreen(),
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(horizontal: 30, vertical: 16),

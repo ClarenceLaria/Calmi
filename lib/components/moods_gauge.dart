@@ -25,6 +25,11 @@ class _MoodsGaugeState extends State<MoodsGauge> {
     super.initState();
     moods = moodsList;
     interval = 100 / moods.length;
+
+    // Initialize the gauge with a default value
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _handleGaugeTap(_value);
+    });
   }
 
   void _handleGaugeTap(double tappedValue) {
@@ -40,73 +45,61 @@ class _MoodsGaugeState extends State<MoodsGauge> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTapDown: (details) {
-        RenderBox box = context.findRenderObject() as RenderBox;
-        final Offset localOffset = box.globalToLocal(details.globalPosition);
-
-        final double width = box.size.width;
-        final double height = box.size.height;
-        final Offset center = Offset(width / 2, height); // bottom center for semicircle
-
-        final Offset relative = localOffset - center;
-        final double angle = relative.direction * (180 / 3.141592); // in degrees
-
-        // Convert angle to value (0-100 range)
-        if (angle >= -180 && angle <= 0) {
-          final double gaugeValue = ((angle + 180) / 180) * 100;
-          _handleGaugeTap(gaugeValue);
-        }
-      },
-      child: Container(
-        height: 300,
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(vertical: 10),
-        child: SfRadialGauge(
-          axes: <RadialAxis>[
-            RadialAxis(
-              minimum: 0,
-              maximum: 100,
-              interval: interval,
-              startAngle: 180,
-              endAngle: 0,
-              radiusFactor: 0.8,
-              showTicks: false,
-              axisLineStyle: const AxisLineStyle(
-                thickness: 0.2,
-                color: Color.fromARGB(255, 29, 28, 28),
-              ),
-              ranges: List.generate(
-                moods.length,
-                (index) {
-                  final double start = index * interval;
-                  final double end = start + interval;
-                  return GaugeRange(
-                    startValue: start,
-                    endValue: end,
-                    color: moods[index].color,
-                    label: moods[index].emoji,
-                  );
-                },
-              ),
-              pointers: <GaugePointer>[
-                NeedlePointer(
-                  value: _value,
-                ),
-              ],
-              annotations: const <GaugeAnnotation>[
-                GaugeAnnotation(
-                  widget: Text(
-                    'Mood Level',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  positionFactor: 0.1,
-                  angle: 90,
-                ),
-              ],
+    return Container(
+      height: 200,
+      color: Colors.green,
+      width: double.infinity,
+      // padding: const EdgeInsets.symmetric(vertical: 10),
+      child: SfRadialGauge(
+        axes: <RadialAxis>[
+          RadialAxis(
+            minimum: 0,
+            maximum: 100,
+            interval: interval,
+            startAngle: 180,
+            endAngle: 0,
+            radiusFactor: 0.8,
+            showTicks: false,
+            showLabels: false,
+            canScaleToFit: true,
+            onAxisTapped: (details) {
+              final double tappedValue = details;
+              _handleGaugeTap(tappedValue);
+            },
+            axisLineStyle: const AxisLineStyle(
+              thickness: 0.2,
+              color: Color.fromARGB(255, 29, 28, 28),
             ),
-          ],
-        ),
+            ranges: List.generate(
+              moods.length,
+              (index) {
+                final double start = index * interval;
+                final double end = start + interval;
+                return GaugeRange(
+                  startValue: start,
+                  endValue: end,
+                  color: moods[index].color,
+                  label: moods[index].emoji,
+                );
+              },
+            ),
+            pointers: <GaugePointer>[
+              NeedlePointer(
+                value: _value,
+              ),
+            ],
+            annotations: const <GaugeAnnotation>[
+              GaugeAnnotation(
+                widget: Text(
+                  'Mood Level',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                positionFactor: 0.1,
+                angle: 90,
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
