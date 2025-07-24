@@ -23,7 +23,7 @@ class _MoodScreenState extends State<MoodScreen> {
     setState(() {
       selectedMood = mood;
     });
-    print('Selected mood: ${mood.label}');
+    debugPrint('Selected mood: ${mood.label}');
   }
 
   @override
