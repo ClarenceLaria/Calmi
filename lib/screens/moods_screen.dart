@@ -65,32 +65,53 @@ class _MoodScreenState extends State<MoodScreen> {
               ],
               SizedBox(height: 20),
               MoodsGauge(onMoodSelected: _onMoodSelected,),
-              Spacer(),
-              if (selectedMood != null)
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MoodsReasonScreen(),
-                        ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 16),
-                    ),
-                    child: Text(
-
-                      "I Feel ${selectedMood!.label}!",
-                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border(
+            top: BorderSide(color: Colors.grey.shade300, width: 0.5),
+          ),
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: selectedMood != null
+            ? SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MoodsReasonScreen(),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 16),
+                  ),
+                  child: Text(
+                    "I Feel ${selectedMood!.label}!",
+                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              )
+            : SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: null, // Disable button if no mood is selected
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 16),
+                    backgroundColor: Colors.grey, 
+                  ),
+                  child: Text(
+                    "Select a Mood First",
+                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
       ),
     );
   }

@@ -13,4 +13,8 @@ final List<MoodsReasonModel> moodsReasonsList = [
   MoodsReasonModel(reason: 'Finances', image: 'assets/icons/money-bag.png'),
   MoodsReasonModel(reason: 'Events', image: 'assets/icons/poppers.png'),
   MoodsReasonModel(reason: 'Exercise', image: 'assets/icons/weightlifting.png'),
+  MoodsReasonModel(reason: 'Exercise', image: 'assets/icons/weightlifting.png'),
+  MoodsReasonModel(reason: 'Exercise', image: 'assets/icons/weightlifting.png'),
+  MoodsReasonModel(reason: 'Exercise', image: 'assets/icons/weightlifting.png'),
+  MoodsReasonModel(reason: 'Exercise', image: 'assets/icons/weightlifting.png'),
 ];

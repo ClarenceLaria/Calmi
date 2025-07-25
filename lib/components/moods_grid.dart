@@ -27,7 +27,6 @@ class _MoodsReasonGridState extends State<MoodsReasonGrid> {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      padding: const EdgeInsets.all(16.0),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: moodsReasonsList.length,
@@ -37,18 +36,19 @@ class _MoodsReasonGridState extends State<MoodsReasonGrid> {
         mainAxisSpacing: 16.0,
         childAspectRatio: 1.0,
       ),
+      controller: ScrollController(),
       itemBuilder: (context, index) {
         final item = moodsReasonsList[index];
         return Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12.0),
+            borderRadius: BorderRadius.circular(8.0),
             color: Colors.white,
           ),
-          height: 250,
-          width: 250,
-          padding: const EdgeInsets.all(8.0),
+          height: 300,
+          width: 300,
+          padding: const EdgeInsets.all(10.0),
           child: Column(children: [
-            Image.asset(item.image, height: 40, width: 40),
+            Image.asset(item.image, height: 35, width: 35),
             const Spacer(),
             Text(
               item.reason,
