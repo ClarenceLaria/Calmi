@@ -14,8 +14,8 @@ class _HomeScreenState extends State<HomeScreen> {
     {'image': 'assets/icons/angry.png', 'color': Colors.red},
     {'image': 'assets/icons/sad.png', 'color': Colors.orange},
     {'image': 'assets/icons/confused.png', 'color': Color.fromARGB(255, 252, 193, 51)},
-    {'image': 'assets/icons/happy.png', 'color': Color.fromARGB(255, 152, 175, 98)},
-    {'image': 'assets/icons/happiness.png', 'color': Colors.green},
+    {'image': 'assets/icons/laugh.png', 'color': Color.fromARGB(255, 152, 175, 98)},
+    {'image': 'assets/icons/happy.png', 'color': Colors.green},
   ];
 
   @override
