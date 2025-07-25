@@ -1,9 +1,18 @@
-import 'package:calmi_app/components/moods_grid.dart';
-import 'package:calmi_app/screens/feelings_screen.dart';
 import 'package:flutter/material.dart';
 
-class MoodsReasonScreen extends StatelessWidget {
-  const MoodsReasonScreen({super.key});
+class Skeleton extends StatelessWidget {
+  const Skeleton({
+    super.key,
+    required this.gridWidget,
+    this.nexScreen,
+    required this.title,
+    required this.buttonText,
+  });
+
+  final Widget gridWidget;
+  final Widget? nexScreen;
+  final String title;
+  final String buttonText;
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +34,12 @@ class MoodsReasonScreen extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  'What is the reason that makes you feel that way?',
+                  title,
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 20),
-                MoodsReasonGrid(),              
+                gridWidget,              
               ],
             ),
           ),
@@ -50,14 +59,14 @@ class MoodsReasonScreen extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context, 
-                MaterialPageRoute(builder: (context) => FeelingsScreen())
+                MaterialPageRoute(builder: (context) => nexScreen!)
               );
             },
             style: ElevatedButton.styleFrom(
               padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
             ),
-            child: const Text(
-              'Continue', 
+            child: Text(
+              buttonText, 
               style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
           ),

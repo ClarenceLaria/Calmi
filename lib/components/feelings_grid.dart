@@ -30,7 +30,7 @@ class _FeelingsGridState extends State<FeelingsGrid> {
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: feelingList.length,
+      itemCount: feelingsList.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
         crossAxisSpacing: 16.0,
@@ -38,7 +38,7 @@ class _FeelingsGridState extends State<FeelingsGrid> {
         childAspectRatio: 1.0,
       ),
       itemBuilder: (context, index) {
-        final item = moodsReasonsList[index];
+        final item = feelingsList[index];
         return Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.0),
@@ -48,12 +48,12 @@ class _FeelingsGridState extends State<FeelingsGrid> {
           width: 300,
           padding: const EdgeInsets.all(10.0),
           child: Column(children: [
-            Image.asset(item.image, height: 35, width: 35),
+            Image.asset(item.emoji, height: 35, width: 35),
             const Spacer(),
             Text(
-              item.reason,
+              item.feeling,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: Theme.of(context).textTheme.bodyMedium?.fontSize, fontWeight: FontWeight.w500),
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
             ),
           ],),
         );

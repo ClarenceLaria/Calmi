@@ -1,6 +1,6 @@
 import 'package:calmi_app/models/feeling_model.dart';
 
-final List<Feeling> feelingList = [
+final List<Feeling> feelingsList = [
   const Feeling(feeling: 'Custom', emoji: 'assets/icons/addition.png'),
   const Feeling(feeling: 'Calm', emoji: 'assets/icons/calm.png'),
   const Feeling(feeling: 'Happy', emoji: 'assets/icons/happiness.png'),
@@ -15,7 +15,7 @@ final List<Feeling> feelingList = [
   const Feeling(feeling: 'Motivated', emoji: 'assets/icons/motivated.png'),
   const Feeling(feeling: 'Cool', emoji: 'assets/icons/cool.png'),
   const Feeling(feeling: 'Depressed', emoji: 'assets/icons/depressed.png'),
-  const Feeling(feeling: 'Disappointment', emoji: 'assets/icons/disappointment.png'),
+  const Feeling(feeling: 'Disappointed', emoji: 'assets/icons/disapointment.png'),
   const Feeling(feeling: 'Shocked', emoji: 'assets/icons/shocked.png'),
   const Feeling(feeling: 'Worried', emoji: 'assets/icons/worried.png'),
 ];

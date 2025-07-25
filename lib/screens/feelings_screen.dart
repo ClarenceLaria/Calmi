@@ -1,3 +1,5 @@
+import 'package:calmi_app/components/feelings_grid.dart';
+import 'package:calmi_app/components/skeleton.dart';
 import 'package:flutter/material.dart';
 
 class FeelingsScreen extends StatelessWidget {
@@ -5,6 +7,11 @@ class FeelingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Skeleton(
+      gridWidget: FeelingsGrid(),
+      nexScreen: null,
+      title: 'What is the reason that makes you feel that way?',
+      buttonText: 'Continue',
+    );
   }
 }
