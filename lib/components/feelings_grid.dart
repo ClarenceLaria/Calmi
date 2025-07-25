@@ -1,35 +1,36 @@
 import 'package:calmi_app/models/moods_reason_model.dart';
+import 'package:calmi_app/repositories/feelings_repo.dart';
 import 'package:calmi_app/repositories/moods_reason_repo.dart';
 import 'package:flutter/material.dart';
 
-class MoodsReasonGrid extends StatefulWidget {
-  const MoodsReasonGrid({super.key});
+class FeelingsGrid extends StatefulWidget {
+  const FeelingsGrid({super.key});
 
   @override
-  State<MoodsReasonGrid> createState() => _MoodsReasonGridState();
+  State<FeelingsGrid> createState() => _FeelingsGridState();
 }
 
-class _MoodsReasonGridState extends State<MoodsReasonGrid> {
-  final Set<int> selectedReasonsIndexes = {};
+class _FeelingsGridState extends State<FeelingsGrid> {
+  final Set<int> selectedFeelingsIndexes = {};
 
   void toggleReason(int index){
     setState(() {
-      if(selectedReasonsIndexes.contains(index)){
-        selectedReasonsIndexes.remove(index);
+      if(selectedFeelingsIndexes.contains(index)){
+        selectedFeelingsIndexes.remove(index);
       } else {
-        selectedReasonsIndexes.add(index);
+        selectedFeelingsIndexes.add(index);
       }
     });
   }
 
-  List<MoodsReasonModel> get selectedReasons => selectedReasonsIndexes.map((index) => moodsReasonsList[index]).toList();
+  List<MoodsReasonModel> get selectedFeelings => selectedFeelingsIndexes.map((index) => moodsReasonsList[index]).toList();
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: moodsReasonsList.length,
+      itemCount: feelingList.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
         crossAxisSpacing: 16.0,
