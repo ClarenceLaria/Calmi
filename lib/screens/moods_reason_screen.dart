@@ -9,7 +9,7 @@ class MoodsReasonScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Skeleton(
-      gridWidget: MoodsReasonGrid(),
+      centerWidget: MoodsReasonGrid(),
       nextScreen: FeelingsScreen(),
       title: 'What is the reason that makes you feel that way?',
       buttonText: 'Continue',

@@ -3,16 +3,18 @@ import 'package:flutter/material.dart';
 class Skeleton extends StatelessWidget {
   const Skeleton({
     super.key,
-    required this.gridWidget,
+    required this.centerWidget,
     this.nextScreen,
     required this.title,
     required this.buttonText,
+    this.color = const Color.fromARGB(255, 245, 245, 245),
   });
 
-  final Widget gridWidget;
+  final Widget centerWidget;
   final Widget? nextScreen;
   final String title;
   final String buttonText;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class Skeleton extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: Color.fromARGB(255, 245, 245, 245),
+      backgroundColor: color,
       extendBody: true,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -39,7 +41,7 @@ class Skeleton extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 20),
-                gridWidget,              
+                centerWidget,              
               ],
             ),
           ),
