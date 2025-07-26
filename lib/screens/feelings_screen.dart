@@ -9,7 +9,7 @@ class FeelingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Skeleton(
       gridWidget: FeelingsGrid(),
-      nexScreen: null,
+      nextScreen: null,
       title: 'What is the reason that makes you feel that way?',
       buttonText: 'Continue',
     );

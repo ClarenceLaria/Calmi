@@ -4,13 +4,13 @@ class Skeleton extends StatelessWidget {
   const Skeleton({
     super.key,
     required this.gridWidget,
-    this.nexScreen,
+    this.nextScreen,
     required this.title,
     required this.buttonText,
   });
 
   final Widget gridWidget;
-  final Widget? nexScreen;
+  final Widget? nextScreen;
   final String title;
   final String buttonText;
 
@@ -59,7 +59,7 @@ class Skeleton extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context, 
-                MaterialPageRoute(builder: (context) => nexScreen!)
+                MaterialPageRoute(builder: (context) => nextScreen!)
               );
             },
             style: ElevatedButton.styleFrom(
