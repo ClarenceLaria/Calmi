@@ -13,7 +13,9 @@ class _AiChatState extends State<AiChat> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(Icons.arrow_back),
           color: Colors.black,
         ),
@@ -29,6 +31,7 @@ class _AiChatState extends State<AiChat> {
           ),
         ],
       ),
+      extendBody: true,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -55,20 +58,33 @@ class _AiChatState extends State<AiChat> {
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
                   ),
+                  fillColor: Colors.grey.shade200,
+                  filled: true,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20.0),
+                    borderRadius: BorderRadius.circular(12.0),
+                    borderSide: BorderSide.none,
                   ),
                 ),
               ),
             ),
-            IconButton(
-              onPressed: () {},
-              icon: Image.asset(
-                'assets/icons/send.png',
-                height: 24,
-                width: 24,
+            const SizedBox(width: 10),
+            Container(
+              decoration: BoxDecoration(
+                color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.circular(30),
               ),
-              color: Theme.of(context).primaryColor,
+              height: 40,
+              width: 40,
+              child: IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  'assets/icons/send.png',
+                  height: 20,
+                  width: 20,
+                  color: Colors.white,
+                ),
+                color: Theme.of(context).primaryColor,
+              ),
             ),
           ],
         ),

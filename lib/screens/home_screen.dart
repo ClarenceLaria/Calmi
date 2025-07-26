@@ -1,3 +1,4 @@
+import 'package:calmi_app/screens/ai_chat.dart';
 import 'package:calmi_app/widgets/timeline.dart';
 import 'package:calmi_app/screens/moods_screen.dart';
 import 'package:flutter/material.dart';
@@ -128,31 +129,41 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      height: 65,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      padding: const EdgeInsets.all(10),
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            'assets/icons/chatbot.png',
-                            height: 50,
-                            width: 50,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const AiChat(),
                           ),
-                          const SizedBox(width: 10),
-                          Flexible(
-                            child: Text(
-                              'Chat with Calmi',
-                              style: TextStyle(
-                                fontSize: Theme.of(context).textTheme.bodySmall?.fontSize ?? 14,
-                                fontWeight: FontWeight.w600,
+                        );
+                      },
+                      child: Container(
+                        height: 65,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        padding: const EdgeInsets.all(10),
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/icons/chatbot.png',
+                              height: 50,
+                              width: 50,
+                            ),
+                            const SizedBox(width: 10),
+                            Flexible(
+                              child: Text(
+                                'Chat with Calmi',
+                                style: TextStyle(
+                                  fontSize: Theme.of(context).textTheme.bodySmall?.fontSize ?? 14,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
