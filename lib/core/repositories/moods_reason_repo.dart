@@ -1,4 +1,4 @@
-import 'package:calmi_app/models/moods_reason_model.dart';
+import 'package:calmi_app/core/models/moods_reason_model.dart';
 
 final List<MoodsReasonModel> moodsReasonsList = [
   MoodsReasonModel(reason: 'Custom', image: 'assets/icons/addition.png'),

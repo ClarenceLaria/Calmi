@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:calmi_app/models/mood_model.dart';
+import 'package:calmi_app/core/models/mood_model.dart';
 
 final List<MoodModel> moodsList = [
   MoodModel(emoji: "😡", label: "Angry", color: Colors.red),

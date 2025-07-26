@@ -1,5 +1,5 @@
-import 'package:calmi_app/components/moods_gauge.dart';
-import 'package:calmi_app/models/mood_model.dart';
+import 'package:calmi_app/widgets/moods_gauge.dart';
+import 'package:calmi_app/core/models/mood_model.dart';
 import 'package:calmi_app/screens/moods_reason_screen.dart';
 import 'package:flutter/material.dart';
 

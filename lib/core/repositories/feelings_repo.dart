@@ -1,4 +1,4 @@
-import 'package:calmi_app/models/feeling_model.dart';
+import 'package:calmi_app/core/models/feeling_model.dart';
 
 final List<Feeling> feelingsList = [
   const Feeling(feeling: 'Custom', emoji: 'assets/icons/addition.png'),

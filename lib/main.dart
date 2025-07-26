@@ -1,4 +1,4 @@
-import 'package:calmi_app/components/entry_point.dart';
+import 'package:calmi_app/widgets/entry_point.dart';
 import 'package:calmi_app/core/theme.dart';
 import 'package:flutter/material.dart';
 

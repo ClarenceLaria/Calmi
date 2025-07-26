@@ -1,5 +1,5 @@
-import 'package:calmi_app/components/add_notes_widget.dart';
-import 'package:calmi_app/components/skeleton.dart';
+import 'package:calmi_app/widgets/add_notes_widget.dart';
+import 'package:calmi_app/widgets/skeleton.dart';
 import 'package:calmi_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 

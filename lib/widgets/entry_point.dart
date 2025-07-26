@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:calmi_app/screens/home_screen.dart';
-import 'package:calmi_app/components/custom_navbar.dart';
+import 'package:calmi_app/widgets/custom_navbar.dart';
 
 class EntryPoint extends StatefulWidget{
   const EntryPoint({super.key});

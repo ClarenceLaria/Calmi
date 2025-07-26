@@ -1,5 +1,5 @@
-import 'package:calmi_app/components/feelings_grid.dart';
-import 'package:calmi_app/components/skeleton.dart';
+import 'package:calmi_app/widgets/feelings_grid.dart';
+import 'package:calmi_app/widgets/skeleton.dart';
 import 'package:calmi_app/screens/add_notes_screen.dart';
 import 'package:flutter/material.dart';
 

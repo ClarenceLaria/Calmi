@@ -1,4 +1,4 @@
-import 'package:calmi_app/components/timeline.dart';
+import 'package:calmi_app/widgets/timeline.dart';
 import 'package:calmi_app/screens/moods_screen.dart';
 import 'package:flutter/material.dart';
 

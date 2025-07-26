@@ -1,5 +1,5 @@
-import 'package:calmi_app/models/moods_reason_model.dart';
-import 'package:calmi_app/repositories/moods_reason_repo.dart';
+import 'package:calmi_app/core/models/moods_reason_model.dart';
+import 'package:calmi_app/core/repositories/moods_reason_repo.dart';
 import 'package:flutter/material.dart';
 
 class MoodsReasonGrid extends StatefulWidget {
