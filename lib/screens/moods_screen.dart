@@ -29,17 +29,22 @@ class _MoodScreenState extends State<MoodScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.close, color: Colors.black),
+        ),
+      ),
+      extendBody: true,
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
           child: Column(
             children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Icon(Icons.close, size: 30),
-              ),
-              SizedBox(height: 20),
               Text(
                 "How do you feel today?",
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
