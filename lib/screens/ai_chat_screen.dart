@@ -1,4 +1,6 @@
 import 'package:calmi_app/core/models/chat_message.dart';
+import 'package:calmi_app/core/repositories/data.dart';
+import 'package:calmi_app/features/chat/chat_drop_down.dart';
 import 'package:calmi_app/features/chat/message_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -48,7 +50,32 @@ class _AiChatState extends State<AiChat> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              showMenu(
+                context: context,
+                position: RelativeRect.fromLTRB(100, MediaQuery.of(context).size.height * 0.1, 0, 100),
+                items: [
+                  PopupMenuItem(
+                    child: Column(
+                      children: chatDropDownItems.map((item) {
+                        return ListTile(
+                          leading: Image.asset(item['icon'], width: 16, height: 16, color: item['color']),
+                          title: Text(
+                            item['title'],
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: item['color'],
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          onTap: item['function'],
+                        );
+                      }).toList(),
+                    ),
+                  ),
+                ],
+              );
+            },
             icon: const Icon(Icons.more_vert),
             color: Colors.black,
           ),
