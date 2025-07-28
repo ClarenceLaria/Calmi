@@ -1,6 +1,5 @@
 import 'package:calmi_app/core/models/chat_message.dart';
 import 'package:calmi_app/core/repositories/data.dart';
-import 'package:calmi_app/features/chat/chat_drop_down.dart';
 import 'package:calmi_app/features/chat/message_widget.dart';
 import 'package:flutter/material.dart';
 
