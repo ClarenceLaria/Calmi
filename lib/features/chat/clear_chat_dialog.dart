@@ -4,7 +4,7 @@ void showClearChatDialog(BuildContext context) {
   showModalBottomSheet(
     context: context,
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
     ),
     backgroundColor: Colors.white,
     builder: (_) {
@@ -26,27 +26,39 @@ void showClearChatDialog(BuildContext context) {
               'Clear Chat',
               style: TextStyle(
                 color: Colors.red,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+                fontSize: Theme.of(context).textTheme.bodySmall?.fontSize,
+                fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 8),
+            Divider(
+              color: Colors.grey[200],
+              thickness: 1,
+            ),
+            SizedBox(height: 8),
             Text(
               'Sure you want to clear the chat?\nThis action cannot be undone.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.black87,
+                fontWeight: FontWeight.w400
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 16),
+            Divider(
+              color: Colors.grey[200],
+              thickness: 1,
+            ),
+            SizedBox(height: 8),
             Row(
               children: [
                 Expanded(
                   child: OutlinedButton(
                     onPressed: () => Navigator.pop(context),
                     style: OutlinedButton.styleFrom(
-                      side: BorderSide(color: Colors.green[100]!),
+                      backgroundColor: Theme.of(context).primaryColor.withAlpha(50),
+                      side: BorderSide(color: Theme.of(context).primaryColor.withAlpha(50)),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(24),
                       ),
@@ -54,7 +66,7 @@ void showClearChatDialog(BuildContext context) {
                     ),
                     child: Text(
                       'Cancel',
-                      style: TextStyle(color: Colors.green[700]),
+                      style: TextStyle(color: Theme.of(context).primaryColor),
                     ),
                   ),
                 ),
@@ -62,16 +74,8 @@ void showClearChatDialog(BuildContext context) {
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
-                      // Handle clear chat logic here
                       Navigator.pop(context);
                     },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green[400],
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(24),
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                    ),
                     child: Text(
                       'Yes. Clear Chat',
                       style: TextStyle(color: Colors.white),

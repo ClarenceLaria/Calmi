@@ -67,7 +67,7 @@ class _AiChatState extends State<AiChat> {
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          onTap: item['function'],
+                          onTap: () => item['function'](context),
                         );
                       }).toList(),
                     ),
