@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ChatSearchBar extends StatelessWidget {
-  final String label;
-  final bool isExpanded;
   final VoidCallback onToggle;
 
   const ChatSearchBar({
     super.key,
-    required this.label,
-    required this.isExpanded,
     required this.onToggle,
   });
 

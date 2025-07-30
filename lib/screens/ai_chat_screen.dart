@@ -50,7 +50,7 @@ class _AiChatState extends State<AiChat> {
         title: Consumer<ChatSearchProvider>(
           builder: (context, provider, _){
             return provider.isSearching
-                ? ChatSearchBar(label: 'Search...', isExpanded: true, onToggle: provider.toggleSearchBar)
+                ? ChatSearchBar(onToggle: provider.toggleSearchBar)
                 : const Text(
                     'Chat with Mindy',
                     style: TextStyle(color: Colors.black),
