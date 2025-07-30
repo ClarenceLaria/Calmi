@@ -46,6 +46,7 @@ class _AiChatState extends State<AiChat> {
           icon: const Icon(Icons.arrow_back),
           color: Colors.black,
         ),
+        backgroundColor: Colors.white,
         title: Consumer<ChatSearchProvider>(
           builder: (context, provider, _){
             return provider.isSearching
@@ -90,6 +91,7 @@ class _AiChatState extends State<AiChat> {
         ],
       ),
       extendBody: true,
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Expanded(
