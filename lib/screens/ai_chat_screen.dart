@@ -1,7 +1,10 @@
 import 'package:calmi_app/core/models/chat_message.dart';
 import 'package:calmi_app/core/repositories/data.dart';
+import 'package:calmi_app/features/chat/chat_search_bar.dart';
 import 'package:calmi_app/features/chat/message_widget.dart';
+import 'package:calmi_app/providers/chat_search_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class AiChat extends StatefulWidget {
   const AiChat({super.key});
@@ -43,9 +46,15 @@ class _AiChatState extends State<AiChat> {
           icon: const Icon(Icons.arrow_back),
           color: Colors.black,
         ),
-        title: const Text(
-          'Chat with Mindy',
-          style: TextStyle(color: Colors.black),
+        title: Consumer<ChatSearchProvider>(
+          builder: (context, provider, _){
+            return provider.isSearching
+                ? ChatSearchBar(label: 'Search...', isExpanded: true, onToggle: provider.toggleSearchBar)
+                : const Text(
+                    'Chat with Mindy',
+                    style: TextStyle(color: Colors.black),
+                  );
+          },
         ),
         actions: [
           IconButton(

@@ -1,9 +1,18 @@
+import 'package:calmi_app/providers/chat_search_provider.dart';
 import 'package:calmi_app/widgets/entry_point.dart';
 import 'package:calmi_app/core/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ChatSearchProvider()),
+      ],
+      child: const MyApp(),
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {

@@ -1,5 +1,7 @@
+import 'package:calmi_app/providers/chat_search_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:calmi_app/features/chat/clear_chat_dialog.dart';
+import 'package:provider/provider.dart';
 
 final List<Map<String, dynamic>> chatDropDownItems = [
   {
@@ -8,6 +10,7 @@ final List<Map<String, dynamic>> chatDropDownItems = [
     'color': Colors.black,
     'function': (BuildContext context) {
       Navigator.pop(context);
+      Provider.of<ChatSearchProvider>(context, listen:false).showSearchBar();
     }
   },
   {
