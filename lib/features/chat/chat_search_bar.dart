@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class ChatSearchBar extends StatelessWidget {
   final VoidCallback onToggle;
 
-  const ChatSearchBar({
+  ChatSearchBar({
     super.key,
     required this.onToggle,
   });
+
+  final FocusNode _focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class ChatSearchBar extends StatelessWidget {
           fontSize: 14,
           fontWeight: FontWeight.w500
         ),
-        
+        focusNode: _focusNode,
         decoration: InputDecoration(
           fillColor: Color.fromARGB(255, 245, 245, 245),
           filled: true,
