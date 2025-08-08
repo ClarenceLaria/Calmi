@@ -1,9 +1,10 @@
 import 'package:calmi_app/features/social_button.dart';
+import 'package:calmi_app/widgets/entry_point.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class OnboardingScreen extends StatelessWidget {
-  const OnboardingScreen({super.key});
+class AuthScreen extends StatelessWidget {
+  const AuthScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +75,9 @@ class OnboardingScreen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      // Navigate to login
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const EntryPoint(),
+                      ));
                     },
                     child: const Text(
                       "Sign in",

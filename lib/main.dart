@@ -1,5 +1,5 @@
 import 'package:calmi_app/providers/chat_search_provider.dart';
-import 'package:calmi_app/widgets/entry_point.dart';
+import 'package:calmi_app/screens/auth_screen.dart';
 import 'package:calmi_app/core/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'Calmi app',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: const EntryPoint(),
+      home: const AuthScreen(),
     );
   }
 }
