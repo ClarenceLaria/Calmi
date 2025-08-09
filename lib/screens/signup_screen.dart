@@ -1,3 +1,6 @@
+import 'package:calmi_app/features/social_icon_button.dart';
+import 'package:calmi_app/features/text_field.dart';
+import 'package:calmi_app/screens/auth_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -40,7 +43,7 @@ class SignUpScreen extends StatelessWidget {
               const SizedBox(height: 25),
 
               // Email Field
-              _buildTextField(
+              CustomTextField(
                 label: "Email",
                 icon: Icons.email_outlined,
               ),
@@ -48,7 +51,7 @@ class SignUpScreen extends StatelessWidget {
               const SizedBox(height: 15),
 
               // Password Field
-              _buildTextField(
+              CustomTextField(
                 label: "Password",
                 icon: Icons.lock_outline,
                 obscureText: true,
@@ -85,13 +88,13 @@ class SignUpScreen extends StatelessWidget {
                 ],
               ),
 
-              const SizedBox(height: 10),
+              const SizedBox(height: 15),
 
               // Sign in link
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Already have an account? "),
+                  const Text("Already have an account? ", style: TextStyle(fontSize: 14)),
                   GestureDetector(
                     onTap: () {},
                     child: Text(
@@ -99,6 +102,7 @@ class SignUpScreen extends StatelessWidget {
                       style: TextStyle(
                         color: primaryColor,
                         fontWeight: FontWeight.w500,
+                        fontSize: 14,
                       ),
                     ),
                   ),
@@ -126,73 +130,43 @@ class SignUpScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _buildSocialIcon(FaIcon(FontAwesomeIcons.google, color: Colors.red)),
-                  _buildSocialIcon(FaIcon(FontAwesomeIcons.apple, color: Colors.black)),
-                  _buildSocialIcon(FaIcon(FontAwesomeIcons.facebook, color: Colors.blue)),
-                  _buildSocialIcon(FaIcon(FontAwesomeIcons.xTwitter, color: Colors.black)),
+                  SocialIconButton(icon: FaIcon(FontAwesomeIcons.google, color: Colors.red)),
+                  SocialIconButton(icon: FaIcon(FontAwesomeIcons.apple, color: Colors.black)),
+                  SocialIconButton(icon: FaIcon(FontAwesomeIcons.facebook, color: Colors.blue)),
+                  SocialIconButton(icon: FaIcon(FontAwesomeIcons.xTwitter, color: Colors.black)),
                 ],
-              ),
-
-              const Spacer(),
-
-              // Sign up button
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: primaryColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    padding: const EdgeInsets.symmetric(vertical: 15),
-                  ),
-                  onPressed: () {},
-                  child: const Text(
-                    "Sign up",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-                  ),
-                ),
               ),
             ],
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildTextField({
-    required String label,
-    required IconData icon,
-    bool obscureText = false,
-    IconData? suffixIcon,
-  }) {
-    return TextField(
-      obscureText: obscureText,
-      decoration: InputDecoration(
-        prefixIcon: Icon(icon, size: 20),
-        suffixIcon: suffixIcon != null ? Icon(suffixIcon, size: 20) : null,
-        hintText: label,
-        filled: true,
-        fillColor: const Color(0xFFF7F7F7),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide.none,
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border(
+            top: BorderSide(color: Colors.grey.shade300, width: 0.5),
+          ),
         ),
-        contentPadding: const EdgeInsets.symmetric(vertical: 14),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width * 0.9,
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AuthScreen())
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+            ),
+            child: Text(
+              "Sign up",
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
       ),
     );
-  }
-
-  Widget _buildSocialIcon(Widget icon) {
-    return Container(
-      height: 48,
-      width: 48,
-      padding: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey.shade300),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: icon,
-    );
-  }
+  }  
 }
