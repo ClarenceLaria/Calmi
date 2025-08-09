@@ -1,4 +1,4 @@
-import 'package:calmi_app/features/social_button.dart';
+import 'package:calmi_app/widgets/social_button.dart';
 import 'package:calmi_app/screens/signup_screen.dart';
 import 'package:calmi_app/widgets/entry_point.dart';
 import 'package:flutter/material.dart';

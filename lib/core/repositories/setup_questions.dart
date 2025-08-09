@@ -85,7 +85,7 @@ final List<Map<String, dynamic>> setupQuestions = [
     ]
   },
   {
-    "question": "How qould you rate your level of happiness overall?",
+    "question": "How would you rate your level of happiness overall?",
     "description": "Understanding your happiness level helps us personalize support.",
     "options": [
       "Very Unhappy",

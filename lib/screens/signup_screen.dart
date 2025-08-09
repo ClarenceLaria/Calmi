@@ -1,5 +1,5 @@
-import 'package:calmi_app/features/social_icon_button.dart';
-import 'package:calmi_app/features/text_field.dart';
+import 'package:calmi_app/widgets/social_icon_button.dart';
+import 'package:calmi_app/widgets/text_field.dart';
 import 'package:calmi_app/screens/auth_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
