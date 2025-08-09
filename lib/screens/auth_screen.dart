@@ -14,12 +14,11 @@ class AuthScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const SizedBox(height: 40),
               Column(
                 children: [
-                  Image.asset('assets/logo.png', height: 60), // 🍀 Your logo here
+                  Image.asset('assets/icons/logo-icon.png', height: 60), 
                   const SizedBox(height: 32),
                   const Text(
                     "Let's Get Started!",
@@ -63,22 +62,27 @@ class AuthScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       // Navigate to signup
-                    },
+                    },  
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF9BB774),
                       minimumSize: const Size(double.infinity, 48),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                    ),
+                    ),                  
                     child: const Text("Sign up"),
                   ),
-                  TextButton(
+
+                  const SizedBox(height: 20),
+
+                  ElevatedButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => const EntryPoint(),
                       ));
                     },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white.withAlpha(200),
+                      foregroundColor: const Color(0xFF9BB774),
+                      side: BorderSide(color: const Color(0xFF9BB774)),
+                      minimumSize: const Size(double.infinity, 48),
+                    ),
                     child: const Text(
                       "Sign in",
                       style: TextStyle(
@@ -88,22 +92,35 @@ class AuthScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Privacy Policy"),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 6),
-                        child: Text("·", style: TextStyle(fontWeight: FontWeight.bold)),
-                      ),
-                      Text("Terms of Service"),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
+                  
                 ],
               ),
             ],
           ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.only(bottom: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Privacy Policy", 
+            style: TextStyle(
+              color: Colors.grey, 
+              fontSize: Theme.of(context).textTheme.bodySmall?.fontSize
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 6),
+              child: Text("·", style: TextStyle(fontWeight: FontWeight.bold)),
+            ),
+            Text("Terms of Service", 
+            style: TextStyle(
+              color: Colors.grey, 
+              fontSize: Theme.of(context).textTheme.bodySmall?.fontSize
+              ),
+            ),
+          ],
         ),
       ),
     );

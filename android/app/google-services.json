@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:69120324803:android:86e8f8c5a8efd2b17ade76",
+        "mobilesdk_app_id": "1:69120324803:android:03722e017d624d017ade76",
         "android_client_info": {
-          "package_name": "com.laria.calmi"
+          "package_name": "com.laria.calmi.calmi_app"
         }
       },
       "oauth_client": [],
