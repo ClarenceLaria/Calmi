@@ -78,9 +78,9 @@ class AuthScreen extends StatelessWidget {
                       ));
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white.withAlpha(200),
+                      backgroundColor: Color.fromARGB(255,152,175,98).withAlpha(50),
                       foregroundColor: const Color(0xFF9BB774),
-                      side: BorderSide(color: const Color(0xFF9BB774)),
+                      shadowColor: Colors.transparent,
                       minimumSize: const Size(double.infinity, 48),
                     ),
                     child: const Text(
