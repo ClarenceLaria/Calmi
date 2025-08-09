@@ -1,4 +1,5 @@
 import 'package:calmi_app/features/social_button.dart';
+import 'package:calmi_app/screens/signup_screen.dart';
 import 'package:calmi_app/widgets/entry_point.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -61,7 +62,9 @@ class AuthScreen extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      // Navigate to signup
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const SignUpScreen(),
+                      ));
                     },  
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(double.infinity, 48),
